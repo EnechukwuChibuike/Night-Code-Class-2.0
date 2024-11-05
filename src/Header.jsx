@@ -1,6 +1,8 @@
 import "./App.css";
+import Button from "./Button";
 
 function Header() {
+  const ButtonText = "GET IN TOUCH";
   return (
     <header className="h-[10vh] bg-white flex justify-between px-48 items-center text-gray-700">
       <strong>CONVERSIONLAB</strong>
@@ -10,11 +12,9 @@ function Header() {
         <a href="#">HOW</a>
         <a href="#">TESTING</a>
         <a href="#">BLOG</a>
-
-        <button className="px-3 py-1 shadow-lg rounded-md bg-[orangered] text-white">
-          GET IN TOUCH
-        </button>
       </nav>
+
+      <Button ButtonText={ButtonText} />
     </header>
   );
 }

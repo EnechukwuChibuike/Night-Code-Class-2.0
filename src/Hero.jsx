@@ -1,6 +1,8 @@
-import React from "react";
+import Button from "./Button";
 
 function Hero() {
+  const ButtonText = "GET HELP WITH LANDING PAGES";
+
   return (
     <section className="bg-blue-400 h-[90vh] px-48 flex justify-between">
       <section className="bg-[url('/portraitman.png')] h-full w-[45%] bg-cover bg-center"></section>
@@ -14,9 +16,11 @@ function Hero() {
           performing landing pages.
         </strong>
 
-        <button className="px-4 py-2 w-fit shadow-lg rounded-md bg-[orangered] text-white">
+        {/* <button className="px-4 py-2 w-fit shadow-lg rounded-md bg-[orangered] text-white">
           GET HELP WITH LANDING PAGES
-        </button>
+        </button> */}
+
+        <Button ButtonText={ButtonText} />
       </section>
     </section>
   );
