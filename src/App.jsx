@@ -1,14 +1,19 @@
 import "./App.css";
 import { useState } from "react";
-import Button from "./Button";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
 function App() {
-  const [num, setNum] = useState(0);
-
+  const [toggleMenu, setToggleMenu] = useState("hidden");
   return (
-    <main className="flex justify-center items-center flex-col h-screen">
-      <h1 className="text-3xl">{num}</h1>
-      <Button ButtonText="click" setNum={setNum} num={num} />
+    <main className="flex h-screen">
+      <Sidebar toggleMenu={toggleMenu} />
+
+      <section className="w-full sm:w-[80%]">
+        <Header setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
+        <Body />
+      </section>
     </main>
   );
 }
