@@ -1,19 +1,18 @@
 import "./App.css";
-import { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
-import Body from "./components/Body";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [toggleMenu, setToggleMenu] = useState("hidden");
-  return (
-    <main className="flex h-screen">
-      <Sidebar toggleMenu={toggleMenu} />
+  const [timer, setTimer] = useState(0);
 
-      <section className="w-full sm:w-[80%]">
-        <Header setToggleMenu={setToggleMenu} toggleMenu={toggleMenu} />
-        <Body />
-      </section>
+  useEffect(() => {
+    setTimeout(() => {
+      setTimer((prev) => prev + 1);
+    }, 1000);
+  }, [timer]);
+
+  return (
+    <main className="flex h-screen justify-center items-center text-4xl">
+      {timer}
     </main>
   );
 }
